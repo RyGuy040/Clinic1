@@ -8,11 +8,16 @@ public class PlayerControl : MonoBehaviour
     private float horizontalInput;
     public float playerSpeed = 10.0f;
     public float turnSpeed = 100.0f;
+    private Rigidbody playerRb;
+    public float jumpForce = 8.0f;
+    public float gravityMod;
+    public bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRb = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityMod;
     }
 
     // Update is called once per frame
@@ -25,6 +30,15 @@ public class PlayerControl : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Rotate(Vector3.up * Time.deltaTime * horizontalInput * turnSpeed);
         //jump
-        //shoot
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isGrounded = true;
     }
 }
