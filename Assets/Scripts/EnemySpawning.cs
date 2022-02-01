@@ -6,11 +6,13 @@ public class EnemySpawning : MonoBehaviour
 {
     public GameObject[] spawnLocations;
     public GameObject enemyPrefab;
+    public int numberOfEnemies;
     
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Spawn", 1.0f, 5.0f);
+        numberOfEnemies = 0;
+        InvokeRepeating("Spawn", 1.0f, 4.0f);
     }
 
     // Update is called once per frame
@@ -21,8 +23,12 @@ public class EnemySpawning : MonoBehaviour
 
     public void Spawn()
     {
-        //int locationIndex = Random.Range(0, spawnLocations.Length);
-        //Instantiate(enemyPrefab, spawnLocations[locationIndex].transform.position, enemyPrefab.transform.rotation);
-        Debug.Log("this feature is working right");
+        if(numberOfEnemies < 5)
+        {
+            int locationIndex = Random.Range(0, spawnLocations.Length);
+            Instantiate(enemyPrefab, spawnLocations[locationIndex].transform.position, enemyPrefab.transform.rotation);
+            numberOfEnemies += 1;
+            //Debug.Log("this feature is working right");
+        }
     }
 }
