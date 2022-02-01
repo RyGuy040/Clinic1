@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public string behaviorState = "wander";
+    public string behaviorState = "attack";
+    public GameObject target;
+    public float moveSpeed = 5.0f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public void RamItDown()
     {
-        //insert code here
+        transform.LookAt(target.transform.position);
+        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
     }
 }
