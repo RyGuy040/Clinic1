@@ -28000,7 +28000,6 @@ GameObject:
   - component: {fileID: 1988262922}
   - component: {fileID: 1988262925}
   - component: {fileID: 1988262924}
-  - component: {fileID: 1988262923}
   - component: {fileID: 1988262926}
   m_Layer: 0
   m_Name: Wand
@@ -28023,20 +28022,6 @@ Transform:
   m_Father: {fileID: 2132113200}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 86.269, y: 36.371, z: 49.347}
---- !u!136 &1988262923
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1988262921}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1988262924
 MeshRenderer:
   m_ObjectHideFlags: 0

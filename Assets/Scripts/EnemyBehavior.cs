@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public string behaviorState = "attack";
+    private string behaviorState = "wander";
     public GameObject target;
     public float moveSpeed = 5.0f;
     
