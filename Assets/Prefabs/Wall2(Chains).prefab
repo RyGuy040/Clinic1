@@ -485,6 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4204658226279935637}
+  - component: {fileID: 4615360458675028690}
   m_Layer: 0
   m_Name: Wall2(Chains)
   m_TagString: Untagged
@@ -522,6 +523,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4615360458675028690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3535926924287587375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8, z: 1.25}
+  m_Center: {x: 0, y: 4, z: 0.25}
 --- !u!1 &3662045134175758903
 GameObject:
   m_ObjectHideFlags: 0
