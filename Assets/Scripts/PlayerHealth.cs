@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         if(other.CompareTag("Enemy"))
         {
             hitPoints -= 1.0f;
+            Debug.Log("this feature is working right");
         }
     }
 }
