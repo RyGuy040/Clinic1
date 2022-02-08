@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FireballCollision : MonoBehaviour
 {
+    public GameObject playerDamage;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerDamage = GameObject.Find("SpawnManager");
     }
 
     // Update is called once per frame
@@ -20,9 +22,9 @@ public class FireballCollision : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            GameObject playerDamage = Destroy(gameObject);
-            playerDamage.GetComponent<EnemySpawning>().numberOfEnemies = -1;
-            Destroy(other.gameObject);
+            int tempPlayer;
+            Destroy(gameObject);
+            tempPlayer = playerDamage.GetComponent<EnemySpawning>().numberOfEnemies -= 1;
         }
 
         else

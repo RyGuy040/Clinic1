@@ -38,4 +38,12 @@ public class EnemyBehavior : MonoBehaviour
         transform.LookAt(target.transform.position);
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Fireball"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
