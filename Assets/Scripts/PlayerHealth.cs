@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float hitPoints = 5.0f;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI gameoverText;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,11 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         healthText.text = "Health: " + hitPoints;
+
+        if(hitPoints <= 0)
+        {
+            gameoverText.gameObject.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
