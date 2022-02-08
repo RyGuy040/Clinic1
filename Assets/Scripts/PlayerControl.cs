@@ -6,7 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     private float forwardInput;
     private float horizontalInput;
-    public float playerSpeed = 10.0f;
+    private float playerSpeed = 13.0f;
     public float turnSpeed = 100.0f;
     private Rigidbody playerRb;
     public float jumpForce = 8.0f;
