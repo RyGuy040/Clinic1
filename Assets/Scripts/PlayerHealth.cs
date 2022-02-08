@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float hitPoints = 5.0f;
+    public float hitPoints = 5.0f;
+    public TextMeshProUGUI healthText;
     
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthText.text = "Health: " + hitPoints;
     }
 
     private void OnTriggerEnter(Collider other)
