@@ -20,7 +20,8 @@ public class FireballCollision : MonoBehaviour
     {
         if(other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            GameObject playerDamage = Destroy(gameObject);
+            playerDamage.GetComponent<EnemySpawning>().numberOfEnemies = -1;
             Destroy(other.gameObject);
         }
 
