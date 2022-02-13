@@ -52,20 +52,24 @@ public class LineOfSight : MonoBehaviour
                 if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
+                    GameObject.Find("Enemy").GetComponent<EnemyBehavior>().BoolSwitchTrue();
                 }
                 else
                 {
                     canSeePlayer = false;
+                    GameObject.Find("Enemy").GetComponent<EnemyBehavior>().BoolSwitchFalse();
                 }
             }
             else
             {
                 canSeePlayer = false;
+                GameObject.Find("Enemy").GetComponent<EnemyBehavior>().BoolSwitchFalse();
             }
         }
         else if(canSeePlayer)
         {
             canSeePlayer = false;
+            GameObject.Find("Enemy").GetComponent<EnemyBehavior>().BoolSwitchFalse();
         }
     }
 }

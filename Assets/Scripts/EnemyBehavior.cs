@@ -46,4 +46,16 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void BoolSwitchTrue()
+    {
+        behaviorState = "attack";
+        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchFalse();
+    }
+
+    public void BoolSwitchFalse()
+    {
+        behaviorState = "wander";
+        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchTrue();
+    }
 }
