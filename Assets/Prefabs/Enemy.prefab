@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3835261322246579825}
   - component: {fileID: 5426298357274342697}
   - component: {fileID: 3316511742549685191}
+  - component: {fileID: 7943437425240068408}
+  - component: {fileID: -6757494350533599881}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -127,3 +129,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   moveSpeed: 5
+--- !u!195 &7943437425240068408
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141558347608613868}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-6757494350533599881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141558347608613868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f768b7dd970e8f6478d505c746fb3bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 7920509232433565271, guid: 481c065ebcf94534c8294bba3a659c3d, type: 3}
+  - {fileID: 6446771968031522939, guid: 3411c600058b4144ea3244345378ab60, type: 3}
+  - {fileID: 5530325569184708379, guid: 748101d4b98aef94ebb32b55c564a9d4, type: 3}
+  - {fileID: 2539530775396542685, guid: 30bf74db607e0a540b4f7daf42b0264c, type: 3}
+  - {fileID: 1955953850037854379, guid: ce62526a13eb9c145a3e8cb23005ebd1, type: 3}
+  - {fileID: 4942591399545935512, guid: 77cd6440055d7c5458aca1b95bac7981, type: 3}
+  - {fileID: 4234401990763008130, guid: 89999458a19417b45b94a8813ac56598, type: 3}
+  - {fileID: 7943186685166151351, guid: 6584375cf51b1cf4a81a6a4b04750d1a, type: 3}
+  isActive: 1
