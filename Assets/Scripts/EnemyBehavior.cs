@@ -30,11 +30,12 @@ public class EnemyBehavior : MonoBehaviour
 
     public void WanderState()
     {
-        //insert code here
+        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchTrue();
     }
 
     public void RamItDown()
     {
+        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchFalse();
         transform.LookAt(target.transform.position);
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
     }
@@ -50,12 +51,10 @@ public class EnemyBehavior : MonoBehaviour
     public void BoolSwitchTrue()
     {
         behaviorState = "attack";
-        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchFalse();
     }
 
     public void BoolSwitchFalse()
     {
         behaviorState = "wander";
-        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchTrue();
     }
 }
