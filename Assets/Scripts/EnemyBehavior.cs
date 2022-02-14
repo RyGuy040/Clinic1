@@ -7,18 +7,30 @@ public class EnemyBehavior : MonoBehaviour
     private string behaviorState = "wander";
     public GameObject target;
     public float moveSpeed = 5.0f;
-    private bool playerIsVisible;
+    public LineOfSight playerIsVisible;
     
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+    if (playerIsVisible == null)
+    {
+      playerIsVisible = GetComponent<LineOfSight>();
+    }
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerIsVisible = LineOfSight.GrabBoolean();
+        if(playerIsVisible == true)
+        {
+            behaviorState = "attack";
+        }
+
+        if(playerIsVisible == false)
+        {
+            behaviorState = "wander";
+        }
         
         if(behaviorState == "wander")
         {

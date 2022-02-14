@@ -52,29 +52,20 @@ public class LineOfSight : MonoBehaviour
                 if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
-                    GrabBoolean();
                 }
                 else
                 {
                     canSeePlayer = false;
-                    GrabBoolean();
                 }
             }
             else
             {
                 canSeePlayer = false;
-                GrabBoolean();
             }
         }
         else if(canSeePlayer)
         {
             canSeePlayer = false;
-            GrabBoolean();
         }
-    }
-
-    public bool GrabBoolean()
-    {
-        return canSeePlayer;
     }
 }

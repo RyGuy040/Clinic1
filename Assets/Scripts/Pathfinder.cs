@@ -37,14 +37,4 @@ public class Pathfinder : MonoBehaviour
         nav.destination = points[destPoint].position;
         destPoint = (destPoint + 1) % points.Length;
     }
-
-    public void BoolSwitchFalse()
-    {
-        isActive = false;
-    }
-
-    public void BoolSwitchTrue()
-    {
-        isActive = true;
-    }
 }
