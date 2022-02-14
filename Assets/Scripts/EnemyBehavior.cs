@@ -7,6 +7,7 @@ public class EnemyBehavior : MonoBehaviour
     private string behaviorState = "wander";
     public GameObject target;
     public float moveSpeed = 5.0f;
+    private bool playerIsVisible;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerIsVisible = LineOfSight.GrabBoolean();
+        
         if(behaviorState == "wander")
         {
             WanderState();
@@ -47,15 +50,4 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    public void BoolSwitchTrue()
-    {
-        behaviorState = "attack";
-        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchFalse();
-    }
-
-    public void BoolSwitchFalse()
-    {
-        behaviorState = "wander";
-        GameObject.Find("Enemy").GetComponent<Pathfinder>().BoolSwitchTrue();
-    }
 }
